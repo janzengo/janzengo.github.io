@@ -1,0 +1,111 @@
+/* Custom styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    padding-top: 60px; /* Account for fixed header */
+}
+
+/* Header styles */
+header {
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+header a {
+    font-size: 0.9375rem;
+    letter-spacing: -0.01em;
+}
+
+/* Dialogue Bubble */
+#dialogue-bubble {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    max-width: 200px;
+    z-index: 2;
+    filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+}
+
+#dialogue-bubble::after {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 12px solid var(--bubble-color, white);
+    filter: drop-shadow(-1px 0 1px rgba(0, 0, 0, 0.1));
+}
+
+.dark #dialogue-bubble::after {
+    --bubble-color: rgb(31, 41, 55);  /* dark:bg-gray-800 */
+}
+
+#dialogue-bubble p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Ensure the bubble doesn't get too close to screen edge on mobile */
+@media (max-width: 640px) {
+    #dialogue-bubble {
+        right: 10px;
+        max-width: 160px;
+    }
+}
+
+/* Particles background */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: auto; /* Enable pointer events */
+}
+
+/* Ensure content stays above particles but doesn't block interactions */
+section {
+    position: relative;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom hover effects for skills cards */
+.skills-card {
+    transition: transform 0.3s ease;
+}
+
+.skills-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Custom animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Theme transition */
+.theme-transition {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}

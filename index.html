@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janzen Go</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6d8674', 
+                        secondary: '#7c9884', 
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 transition-colors duration-300">
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="/" class="text-lg font-semibold text-gray-800 dark:text-white hover:text-primary transition-colors">
+                @janzengo
+            </a>
+            <div class="flex items-center gap-8">
+                <a href="/" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
+                    home
+                </a>
+                <a href="projects.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
+                    projects
+                </a>
+                <a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
+                    about
+                </a>
+                <a href="contact.html" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
+                    contact
+                </a>
+                <div class="flex gap-2 ml-4 border-l border-gray-200 dark:border-gray-700 pl-4">
+                    <button id="particle-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" title="Toggle particles">
+                        <i class="fas fa-atom text-emerald-500"></i>
+                    </button>
+                    <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                        <i class="fas fa-sun text-yellow-500 dark:hidden"></i>
+                        <i class="fas fa-moon text-blue-300 hidden dark:block"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Particles Background -->
+    <div id="particles-js" class="fixed inset-0 pointer-events-auto opacity-100 transition-opacity duration-300"></div>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center px-4 py-12">
+        <div class="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+            <!-- Text Content -->
+            <div class="text-center lg:text-left lg:w-1/2 hero-content">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4">
+                    <span id="typed-name"></span>
+                </h1>
+                <h2 class="text-xl md:text-2xl text-primary mb-6">
+                    <span id="typed-title"></span>
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto lg:mx-0 mb-8">
+                    <span id="typed-description"></span>
+                </p>
+                <a href="#projects" class="inline-block px-6 py-3 bg-primary text-white rounded-lg hover:bg-secondary transition-colors">
+                    View My Work <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <!-- Illustration -->
+            <div class="lg:w-1/2 flex justify-center relative hero-image">
+                <img 
+                    src="images/janzen-illustration.png" 
+                    alt="Janzen Go Illustration" 
+                    class="w-64 md:w-80 lg:w-96 h-auto object-contain p-4"
+                >
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Frontend Card -->
+                <div class="bg-white dark:bg-[#1e2837] rounded-lg p-6 hover:bg-gray-50 dark:hover:bg-[#232f3e] transition-colors shadow-lg" data-aos="fade-up">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Frontend Development</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed">
+                        Consistency and ease of use of UI components are my focus when writing code. Either following or creating a design system based on the mockups, I do them both while being thoughtful of accessibility and performance.
+                    </p>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-gray-400 dark:text-gray-500 mb-2 text-sm">Languages I use</h4>
+                            <div class="flex flex-wrap gap-4">
+                                <i class="fab fa-html5 text-2xl text-[#E34F26] hover:scale-110 transition-transform" title="HTML5"></i>
+                                <i class="fab fa-css3-alt text-2xl text-[#1572B6] hover:scale-110 transition-transform" title="CSS3"></i>
+                                <i class="fab fa-js text-2xl text-[#F7DF1E] hover:scale-110 transition-transform" title="JavaScript"></i>
+                                <i class="fab fa-typescript text-2xl text-[#3178C6] hover:scale-110 transition-transform" title="TypeScript"></i>
+                                <i class="fab fa-markdown text-2xl dark:text-gray-300 hover:scale-110 transition-transform" title="Markdown"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-gray-400 dark:text-gray-500 mb-2 text-sm">Tools I use</h4>
+                            <div class="flex flex-wrap gap-4">
+                                <i class="fab fa-react text-2xl text-[#61DAFB] hover:scale-110 transition-transform" title="ReactJS"></i>
+                                <span class="icon-tailwindcss text-2xl hover:scale-110 transition-transform" title="TailwindCSS"></span>
+                                <i class="fab fa-bootstrap text-2xl text-[#7952B3] hover:scale-110 transition-transform" title="Bootstrap"></i>
+                                <i class="fab fa-github text-2xl text-[#211F1C] dark:text-gray-300 hover:scale-110 transition-transform" title="GitHub"></i>
+                                <i class="fas fa-terminal text-2xl text-[#211F1C] dark:text-gray-300 hover:scale-110 transition-transform" title="Terminal"></i>
+                                <i class="fab fa-microsoft text-2xl text-[#5C2D91] hover:scale-110 transition-transform" title="VSCode"></i>
+                                <i class="fas fa-wind text-2xl text-emerald-500 hover:scale-110 transition-transform" title="Windsurf"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Backend Development Card -->
+                <div class="bg-white dark:bg-[#1e2837] rounded-lg p-6 hover:bg-gray-50 dark:hover:bg-[#232f3e] transition-colors shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Backend Development</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed">
+                        Building robust and scalable server-side applications with a focus on security, performance, and clean architecture. Experienced in creating RESTful APIs and handling database operations efficiently.
+                    </p>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-gray-400 dark:text-gray-500 mb-2 text-sm">Languages I use</h4>
+                            <div class="flex flex-wrap gap-4">
+                                <i class="fab fa-php text-2xl text-[#777BB4] hover:scale-110 transition-transform" title="PHP"></i>
+                                <i class="fab fa-python text-2xl text-[#3776AB] hover:scale-110 transition-transform" title="Python"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-gray-400 dark:text-gray-500 mb-2 text-sm">Tools I use</h4>
+                            <div class="flex flex-wrap gap-4">
+                                <i class="fab fa-laravel text-2xl text-[#FF2D20] hover:scale-110 transition-transform" title="Laravel"></i>
+                                <span class="icon-django text-2xl text-[#00ed64] hover:scale-110 transition-transform" title="Django"></span>
+                                <i class="fas fa-database text-2xl text-[#4479A1] hover:scale-110 transition-transform" title="MySQL"></i>
+                                <i class="fas fa-leaf text-2xl text-[#00ED64] hover:scale-110 transition-transform" title="MongoDB"></i>
+                                <i class="fab fa-github text-2xl dark:text-gray-300 text-[#14191f] hover:scale-110 transition-transform" title="GitHub"></i>
+                                <i class="fab fa-microsoft text-2xl text-[#5C2D91] hover:scale-110 transition-transform" title="VSCode"></i>
+                                <i class="fas fa-wind text-2xl text-emerald-500 hover:scale-110 transition-transform" title="Windsurf"></i>
+                                <i class="fas fa-server text-2xl text-[#00D1B2] hover:scale-110 transition-transform" title="Herd"></i>
+                                <i class="fab fa-node-js text-2xl text-[#339933] hover:scale-110 transition-transform" title="Node.js"></i>
+                                <span class="icon-xampp text-2xl hover:scale-110 transition-transform" title="XAMPP"><span class="path1"></span><span class="path2"></span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital Design Card -->
+                <div class="bg-white dark:bg-[#1e2837] rounded-lg p-6 hover:bg-gray-50 dark:hover:bg-[#232f3e] transition-colors shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Digital Design</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed">
+                        Creating visually stunning designs and multimedia content with industry-standard tools. Experienced in graphic design, video editing, and digital art creation.
+                    </p>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-gray-400 dark:text-gray-500 mb-2 text-sm">Tools I use</h4>
+                            <div class="flex flex-wrap gap-4">
+                                <span class="icon-adobeillustrator text-2xl text-[#FF9A00] hover:scale-110 transition-transform" title="Adobe Illustrator"></span>
+                                <span class="icon-adobephotoshop text-2xl text-[#31A8FF] hover:scale-110 transition-transform" title="Adobe Photoshop"></span>
+                                <span class="icon-adobeindesign text-2xl text-[#FF3366] hover:scale-110 transition-transform" title="Adobe InDesign"></span>
+                                <span class="icon-adobepremiere text-2xl text-[#EA77FF] hover:scale-110 transition-transform" title="Adobe Premiere Pro"></span>
+                                <span class="icon-canva text-2xl text-[#00C4CC] hover:scale-110 transition-transform" title="Canva"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-12 text-gray-800 dark:text-white">
+                Get In Touch
+            </h2>
+            <div class="flex justify-center gap-8 mb-8">
+                <a href="mailto:your.email@example.com" class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">
+                    <i class="fas fa-envelope text-2xl"></i>
+                </a>
+                <a href="https://github.com/janzengo" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="https://linkedin.com/in/janzengo" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="https://instagram.com/janzengogrowglow" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300">
+                Feel free to reach out for collaborations or just a friendly hello 
+            </p>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // GSAP Animation for hero section
+            gsap.from(".hero-content", {
+                duration: 1,
+                y: 50,
+                opacity: 0,
+                ease: "power3.out"
+            });
+            
+            gsap.from(".hero-image", {
+                duration: 1,
+                x: 50,
+                opacity: 0,
+                delay: 0.3,
+                ease: "power3.out"
+            });
+        });
+    </script>
+</body>
+</html>

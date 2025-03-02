@@ -1,238 +1,435 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Janzen Go | Full Stack Developer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Janzen Go | Aspiring Full Stack Engineer & Web Developer | Philippines</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Janzen Go is an Aspiring Full Stack Engineer and Web Developer from the Philippines, specializing in creating responsive websites and web applications with modern technologies.">
+    <meta name="keywords" content="Janzen Go, Aspiring Full Stack Engineer, Web Developer, Software Engineer, Graphic Designer, Philippines, Frontend, Backend, JavaScript, React, PHP, Python">
+    <meta name="author" content="Janzen Go">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://janzengo.tech/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://janzengo.tech/">
+    <meta property="og:title" content="Janzen Go | Full Stack Engineer & Web Developer">
+    <meta property="og:description" content="Aspiring Full Stack Engineer and Web Developer specializing in creating robust and scalable web applications with modern technologies.">
+    <meta property="og:image" content="https://janzengo.tech/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://janzengo.tech/">
+    <meta property="twitter:title" content="Janzen Go | Aspiring Full Stack Engineer & Web Developer">
+    <meta property="twitter:description" content="Aspiring Full Stack Engineer and Web Developer specializing in creating robust and scalable web applications with modern technologies.">
+    <meta property="twitter:image" content="https://janzengo.tech/images/og-image.jpg">
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/logo.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-52x152.png">
+    
+    <!-- Tailwind and Custom Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Janzen Go",
+      "url": "https://janzengo.tech",
+      "image": "https://janzengo.tech/images/profile.jpg",
+      "jobTitle": "Full Stack Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      },
+      "description": "Aspiring Full Stack Engineer and Web Developer specializing in creating responsive websites and web applications with modern technologies.",
+      "sameAs": [
+        "https://github.com/janzengo",
+        "https://linkedin.com/in/janzengo"
+      ],
+      "knowsAbout": [
+        "Web Development",
+        "JavaScript",
+        "React",
+        "PHP",
+        "Python",
+        "UI/UX Design",
+        "Graphic Design"
+      ]
+    }
+    </script>
+    
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        primary: '#6d8674', 
-                        secondary: '#7c9884', 
-                    }
+                        'navy': '#0a192f',
+                        'light-navy': '#112240',
+                        'lightest-navy': '#233554',
+                        'slate': '#8892b0',
+                        'light-slate': '#a8b2d1',
+                        'lightest-slate': '#ccd6f6',
+                        'white': '#e6f1ff',
+                        'green': '#64ffda',
+                    },
+                    fontFamily: {
+                        'sfpro': ['SF Pro Display', 'system-ui', 'sans-serif'],
+                        'mono': ['Fira Code', 'monospace'],
+                    },
                 }
             }
         }
     </script>
 </head>
-<body class="bg-white dark:bg-gray-900 transition-colors duration-300">
-    <!-- Header Navigation -->
-    <header class="fixed top-0 left-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800">
-        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="/" class="text-lg font-semibold text-gray-800 dark:text-white hover:text-primary transition-colors">
-                @janzengo
-            </a>
-            <div class="flex items-center gap-8">
-                <a href="/" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
-                    home
-                </a>
-                <a href="/about" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
-                    about
-                </a>
-                <a href="/projects" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
-                    projects
-                </a>
-                <a href="/contact" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
-                    contact
-                </a>
-                <div class="flex gap-2 ml-4 border-l border-gray-200 dark:border-gray-700 pl-4">
-                    <button id="particle-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" title="Toggle particles">
-                        <i class="fas fa-atom text-emerald-500"></i>
-                    </button>
-                    <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                        <i class="fas fa-sun text-yellow-500 dark:hidden"></i>
-                        <i class="fas fa-moon text-blue-300 hidden dark:block"></i>
-                    </button>
-                </div>
-            </div>
-        </nav>
+<body class="font-sfpro">
     </header>
 
-    <!-- Particles Background -->
-    <div id="particles-js" class="fixed inset-0 pointer-events-auto opacity-100 transition-opacity duration-300"></div>
+    <div id="particles-js"></div>
+    
+    
 
-    <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center px-4 py-12">
-        <div class="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
-            <!-- Text Content -->
-            <div class="text-center lg:text-left lg:w-1/2 hero-content">
-                <h1 class="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4">
-                    <span id="typed-name"></span>
-                </h1>
-                <h2 class="text-xl md:text-2xl text-primary mb-6">
-                    <span id="typed-title"></span>
-                </h2>
-                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto lg:mx-0 mb-8">
-                    <span id="typed-description"></span>
-                </p>
-                <a href="#projects" class="inline-block px-6 py-3 bg-primary text-white rounded-lg hover:bg-secondary transition-colors">
-                    View My Work <i class="fas fa-arrow-right ml-2 hover:ml-3 transition-transform duration-300"></i>
-                </a>
-            </div>
-            <!-- Illustration -->
-            <div class="lg:w-1/2 flex justify-center relative hero-image">
-                <img 
-                    src="images/janzen-illustration.png" 
-                    alt="Janzen Go Illustration" 
-                    class="w-64 md:w-80 lg:w-96 h-auto object-contain p-4"
-                >
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Frontend Card -->
-                <div class="bg-white dark:bg-[#1e2837] rounded-lg p-6 hover:bg-gray-50 dark:hover:bg-[#232f3e] transition-colors shadow-lg" data-aos="fade-up">
-                    <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Frontend Development</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed">
-                        Consistency and ease of use of UI components are my focus when writing code. Either following or creating a design system based on the mockups, I do them both while being thoughtful of accessibility and performance.
+    <div class="content-wrapper">
+        <div class="flex flex-col md:flex-row min-h-screen">
+            <!-- Fixed Left Section -->
+            <section class="fixed-section md:w-[40%] lg:w-[35%] md:h-screen md:fixed p-8 flex flex-col justify-between" id="home">
+                <div class="left-content">
+                    <h1 class="text-4xl md:text-5xl lg:text-5xl font-bold text-lightest-slate mb-4 tracking-tight">
+                        Janzen Go.
+                    </h1>
+                    <div class="text-2xl md:text-3xl md:text-1xl font-family text-slate mb-8">
+                        Aspiring Full Stack Engineer
+                    </div>
+                    <p class="text-md text-slate mb-8 leading-relaxed">
+                        I'm an aspiring Full Stack Engineer and Graphic Designer passionate about building exceptional digital experiences.
                     </p>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="text-gray-400 dark:text-gray-500 mb-2 text-sm">Languages I use</h4>
-                            <div class="flex flex-wrap gap-4">
-                                <i class="fab fa-html5 text-2xl text-[#E34F26] hover:scale-110 transition-transform" title="HTML5"></i>
-                                <i class="fab fa-css3-alt text-2xl text-[#1572B6] hover:scale-110 transition-transform" title="CSS3"></i>
-                                <i class="fab fa-js text-2xl text-[#F7DF1E] hover:scale-110 transition-transform" title="JavaScript"></i>
-                                <i class="fab fa-typescript text-2xl text-[#3178C6] hover:scale-110 transition-transform" title="TypeScript"></i>
-                                <i class="fab fa-markdown text-2xl dark:text-gray-300 hover:scale-110 transition-transform" title="Markdown"></i>
+                </div>
+
+                <!-- Section Navigation -->
+                <nav class="section-nav">
+                    <div class="nav-item" data-section="about">
+                        <div class="nav-dot"></div>
+                        <span class="nav-text">About</span>
+                    </div>
+                    <div class="nav-item" data-section="skills">
+                        <div class="nav-dot"></div>
+                        <span class="nav-text">Skills</span>
+                    </div>
+                    <div class="nav-item" data-section="experience">
+                        <div class="nav-dot"></div>
+                        <span class="nav-text">Experience</span>
+                    </div>
+                    <div class="nav-item" data-section="projects">
+                        <div class="nav-dot"></div>
+                        <span class="nav-text">Projects</span>
+                    </div>
+                    <div class="nav-item" data-section="contact">
+                        <div class="nav-dot"></div>
+                        <span class="nav-text">Contact</span>
+                    </div>
+                </nav>
+
+                <!-- Social Links with Labels -->
+                <div class="space-y-4 left-content">
+                    <div class="flex flex-row space-x-2">
+                        <a href="https://github.com/janzengo" target="_blank" rel="noopener noreferrer" 
+                           class="social-link text-slate hover:text-green px-1">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/janzengo" target="_blank" rel="noopener noreferrer" 
+                           class="social-link text-slate hover:text-green px-1">
+                            <i class="fab fa-linkedin-in text-2xl"></i>
+                        </a>
+                        <a href="https://instagram.com/janzengogrowglow" target="_blank" rel="noopener noreferrer" 
+                           class="social-link text-slate hover:text-green px-1">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="https://bsky.app/profile/janzengo.bsky.social" target="_blank" rel="noopener noreferrer" 
+                           class="social-link text-slate hover:text-green px-1">
+                            <i class="fa-brands fa-bluesky text-2xl"></i>
+                        </a>                        
+                    </div>
+                    <p class="text-sm text-slate font-mono mt-6 opacity-50"> 2025 Janzen Go. All rights reserved.</p>
+                </div>
+            </section>
+
+            <!-- Scrollable Right Section -->
+            <section class="scrollable-section md:w-[60%] lg:w-[65%] md:ml-[40%] lg:ml-[35%] min-h-screen p-8 custom-scrollbar">
+                <!-- About Section -->
+                <div class="mb-24" id="about">
+                    <h2 class="text-2xl font-semibold text-lightest-slate mb-8 font-mono tracking-tight">&lt; about me /&gt;</h2>
+                    <div class="w-full">
+                        <p class="text-slate mb-5 leading-relaxed">
+                            Hello! I'm Janzen Go, an aspiring Full Stack Developer and Graphic Designer working hard to make a name for myself. As a working student at Dalubhasaang Politekniko ng Lungsod ng Baliwag (formerly Baliwag Polytechnic College), I balance my studies with my role as a Full Stack Developer and Maintenance Manager for the website I designed for AGGTE (Aquaponics Go Green Trading Enterprise) WPC Cladding and Decking.
+                        </p>
+                        <p class="text-slate mb-5 leading-relaxed">
+                            I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between. My journey in web development started when I began exploring customization and coding, which sparked my interest in building digital experiences.
+                        </p>
+                        <p class="text-slate mb-5 leading-relaxed">
+                            Eager to advance my career and explore the vast world of technology, I am actively making it happen through open-source contributions. Fast-forward to today, and I'm continuously learning and improving my skills to develop accessible, human-centered products and applications.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Skills Section -->
+                <div class="mb-24" id="skills">
+                    <h2 class="text-2xl font-semibold text-lightest-slate mb-8 font-mono tracking-tight">&lt; skills /&gt;</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="skill-tag p-4 bg-light-navy rounded-lg text-center">
+                            <i class="fab fa-python text-3xl mb-3"></i>
+                            <h3 class="font-mono text-sm">Python</h3>
+                        </div>
+                        <div class="skill-tag p-4 bg-light-navy rounded-lg text-center">
+                            <i class="fab icon-django text-3xl mb-3"></i>
+                            <h3 class="font-mono text-sm">Django</h3>
+                        </div>
+                        <div class="skill-tag p-4 bg-light-navy rounded-lg text-center">
+                            <i class="fab fa-php text-3xl mb-3"></i>
+                            <h3 class="font-mono text-sm">PHP</h3>
+                        </div>
+                        <div class="skill-tag p-4 bg-light-navy rounded-lg text-center">
+                            <i class="fab fa-laravel text-3xl mb-3"></i>
+                            <h3 class="font-mono text-sm">Laravel</h3>
+                        </div>
+                        <div class="skill-tag p-4 bg-light-navy rounded-lg text-center">
+                            <i class="fab icon-tailwindcss text-3xl mb-3"></i>
+                            <h3 class="font-mono text-sm">TailWind CSS</h3>
+                        </div>       
+                        <div class="skill-tag p-4 bg-light-navy rounded-lg text-center">
+                            <i class="fab fa-node-js text-3xl mb-3"></i>
+                            <h3 class="font-mono text-sm">Node.js</h3>
+                        </div>
+                        <div class="skill-tag p-4 bg-light-navy rounded-lg text-center">
+                            <i class="fab icon-adobephotoshop text-3xl mb-3"></i>
+                            <h3 class="font-mono text-sm">Adobe Photoshop</h3>
+                        </div>
+                        <div class="skill-tag p-4 bg-light-navy rounded-lg text-center">
+                            <i class="fab icon-adobeillustrator text-3xl mb-3"></i>
+                            <h3 class="font-mono text-sm">Adobe Illustrator</h3>
+                        </div>       
+                        <div class="skill-tag p-4 bg-light-navy rounded-lg text-center">
+                            <i class="fab icon-adobeaftereffects text-3xl mb-3"></i>
+                            <h3 class="font-mono text-sm">Adobe After Effects</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Section -->
+                <div class="mb-24" id="experience">
+                    <h2 class="text-2xl font-semibold text-lightest-slate mb-8 font-mono tracking-tight">&lt; experience /&gt;</h2>
+                    <div class="space-y-12 relative">
+                        <div class="experience-line absolute left-0 top-0 h-full"></div>
+                        
+                        <div class="experience-item relative pl-8">
+                            <div class="experience-dot"></div>
+                            <h3 class="text-xl font-semibold text-lightest-slate mb-2">Yearbook Graphic Designer</h3>
+                            <h4 class="text-md font-regular text-lightest-slate mb-2">Immaculate Conception Archdiocesan School de Calarian (ICAS de Calarian)</h4>
+                            <p class="text-green font-mono text-sm mb-4">2017 - Present</p>
+                            <ul class="space-y-2 text-slate">
+                                <li class="flex items-start">
+                                    <span class="text-green mr-2">▹</span>
+                                    Designed and produced school yearbooks using Adobe InDesign and Photoshop 
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green mr-2">▹</span>
+                                    Transitioned to Canva for yearbook creation, adapting to modern design tools
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green mr-2">▹</span>
+                                    Delivered visually appealing and well-organized yearbooks for a diverse student body
+                                </li>
+                            </ul>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="px-3 py-1 text-green font-mono text-sm bg-navy/50 rounded-full">Adobe Photoshop</span>
+                                <span class="px-3 py-1 text-green font-mono text-sm bg-navy/50 rounded-full">Adobe Illustrator</span>
+                                <span class="px-3 py-1 text-green font-mono text-sm bg-navy/50 rounded-full">Adobe InDesign</span>
+                                <span class="px-3 py-1 text-green font-mono text-sm bg-navy/50 rounded-full">Canva</span>
                             </div>
                         </div>
-                        <div>
-                            <h4 class="text-gray-400 dark:text-gray-500 mb-2 text-sm">Tools I use</h4>
-                            <div class="flex flex-wrap gap-4">
-                                <i class="fab fa-react text-2xl text-[#61DAFB] hover:scale-110 transition-transform" title="ReactJS"></i>
-                                <span class="icon-tailwindcss text-2xl hover:scale-110 transition-transform" title="TailwindCSS"></span>
-                                <i class="fab fa-bootstrap text-2xl text-[#7952B3] hover:scale-110 transition-transform" title="Bootstrap"></i>
-                                <i class="fab fa-github text-2xl dark:text-gray-300 text-[#211F1C] hover:scale-110 transition-transform" title="GitHub"></i>
-                                <i class="fas fa-terminal text-2xl text-[#211F1C] dark:text-gray-300 hover:scale-110 transition-transform" title="Terminal"></i>
-                                <i class="fab fa-microsoft text-2xl text-[#5C2D91] hover:scale-110 transition-transform" title="VSCode"></i>
-                                <i class="fas fa-wind text-2xl text-emerald-500 hover:scale-110 transition-transform" title="Windsurf"></i>
+
+                        <div class="experience-item relative pl-8">
+                            <div class="experience-dot"></div>
+                            <h3 class="text-xl font-semibold text-lightest-slate">Full Stack Developer</h3>
+                            <h4 class="text-md font-regular text-lightest-slate mb-2">AGGTEDeck WPC Cladding & Decking</h4>
+                            <p class="text-green font-mono text-sm mb-4">2020 - Present</p>
+                            <ul class="space-y-2 text-slate">
+                                <li class="flex items-start">
+                                    <span class="text-green mr-2">▹</span>
+                                    Developed and launched a construction landing page website for a company selling and installing WPC products
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green mr-2">▹</span>
+                                    Responsible for ongoing maintenance and updates to ensure optimal website performance
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green mr-2">▹</span>
+                                    Supported the company's online presence by keeping the site current and fully functional
+                                </li>
+                            </ul>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="px-3 py-1 text-green font-mono text-sm bg-navy/50 rounded-full">PHP</span>
+                                <span class="px-3 py-1 text-green font-mono text-sm bg-navy/50 rounded-full">JavaScript</span>
+                                <span class="px-3 py-1 text-green font-mono text-sm bg-navy/50 rounded-full">Bootstrap</span>
+                                <span class="px-3 py-1 text-green font-mono text-sm bg-navy/50 rounded-full">HTML</span>
+                                <span class="px-3 py-1 text-green font-mono text-sm bg-navy/50 rounded-full">CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <a href="assets/resume.pdf" target="_blank" class="text-white font-mono text-sm hover:text-green hover:underline transition-all">View Full Resume <i class="fas fa-external-link-alt"></i></a>
+                </div>
+
+                <!-- Projects Section -->
+                <div class="mb-24" id="projects">
+                    <h2 class="text-2xl font-semibold text-lightest-slate mb-8 font-mono tracking-tight">&lt; projects /&gt;</h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="project-card bg-light-navy p-6 rounded-lg">
+                            <div class="absolute top-4 right-4 flex space-x-4">
+                                <a href="https://github.com/janzengo/e-halal-btechenyo" target="_blank" class="text-slate hover:text-green transition-colors">
+                                    <i class="fab fa-github text-xl"></i>
+                                </a>
+                            </div>
+                            <h3 class="text-xl font-semibold text-lightest-slate mb-4">E-Halal BTECHenyo</h3>
+                            <p class="text-slate mb-4 leading-relaxed">
+                                A full-featured e-voting platform with pre-voting, voting, and post-voting modules, each with different features and functionalites inside.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-green font-mono text-sm">PHP</span>
+                                <span class="text-green font-mono text-sm">AdminLTE</span>
+                                <span class="text-green font-mono text-sm">Bootstrap</span>
+                                <span class="text-green font-mono text-sm">MySQL</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card bg-light-navy p-6 rounded-lg">
+                            <div class="absolute top-4 right-4 flex space-x-4">
+                                <a href="#" target="_blank" class="text-slate hover:text-green transition-colors">
+                                    <i class="fab fa-github text-xl"></i>
+                                </a>
+                                <a href="#" target="_blank" class="text-slate hover:text-green transition-colors">
+                                    <i class="fas fa-external-link-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <h3 class="text-xl font-semibold text-lightest-slate mb-4">MeetMate</h3>
+                            <p class="text-slate mb-4 leading-relaxed">
+                                A lightweight browser extension that helps you save, organize, and quickly access your Google Meet links.                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-green font-mono text-sm">HTML</span>
+                                <span class="text-green font-mono text-sm">TailWind CSS</span>
+                                <span class="text-green font-mono text-sm">JavaScript</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card bg-light-navy p-6 rounded-lg">
+                            <div class="absolute top-4 right-4 flex space-x-4">
+                                <a href="#" target="_blank" class="text-slate hover:text-green transition-colors">
+                                    <i class="fab fa-github text-xl"></i>
+                                </a>
+                                <a href="#" target="_blank" class="text-slate hover:text-green transition-colors">
+                                    <i class="fas fa-external-link-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <h3 class="text-xl font-semibold text-lightest-slate mb-4">Jammify</h3>
+                            <p class="text-slate mb-4 leading-relaxed">
+                                A simple frontend-focused website that mimics Spotify.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-green font-mono text-sm">HTML</span>
+                                <span class="text-green font-mono text-sm">TailWind CSS</span>
+                                <span class="text-green font-mono text-sm">JQuery</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Backend Development Card -->
-                <div class="bg-white dark:bg-[#1e2837] rounded-lg p-6 hover:bg-gray-50 dark:hover:bg-[#232f3e] transition-colors shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Backend Development</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed">
-                        Building robust and scalable server-side applications with a focus on security, performance, and clean architecture. Experienced in creating RESTful APIs and handling database operations efficiently.
+
+                <!-- Contact Section -->
+                <div class="mb-24" id="contact">
+                    <h2 class="text-2xl font-semibold text-lightest-slate mb-8 font-mono tracking-tight">&lt; contact /&gt;</h2>
+                    <p class="text-slate mb-8 max-w-xl leading-relaxed">
+                        I'm currently looking for new opportunities. Whether you have a question or just want to say hi, 
+                        I'll try my best to get back to you!
                     </p>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="text-gray-400 dark:text-gray-500 mb-2 text-sm">Languages I use</h4>
-                            <div class="flex flex-wrap gap-4">
-                                <i class="fab fa-php text-2xl text-[#777BB4] hover:scale-110 transition-transform" title="PHP"></i>
-                                <i class="fab fa-python text-2xl text-[#3776AB] hover:scale-110 transition-transform" title="Python"></i>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-gray-400 dark:text-gray-500 mb-2 text-sm">Tools I use</h4>
-                            <div class="flex flex-wrap gap-4">
-                                <i class="fab fa-laravel text-2xl text-[#FF2D20] hover:scale-110 transition-transform" title="Laravel"></i>
-                                <span class="icon-django text-2xl text-[#00ed64] hover:scale-110 transition-transform" title="Django"></span>
-                                <i class="fas fa-database text-2xl text-[#4479A1] hover:scale-110 transition-transform" title="MySQL"></i>
-                                <i class="fas fa-leaf text-2xl text-[#00ED64] hover:scale-110 transition-transform" title="MongoDB"></i>
-                                <i class="fab fa-github text-2xl dark:text-gray-300 text-[#14191f] hover:scale-110 transition-transform" title="GitHub"></i>
-                                <i class="fab fa-microsoft text-2xl text-[#5C2D91] hover:scale-110 transition-transform" title="VSCode"></i>
-                                <i class="fas fa-wind text-2xl text-emerald-500 hover:scale-110 transition-transform" title="Windsurf"></i>
-                                <i class="fas fa-server text-2xl text-[#00D1B2] hover:scale-110 transition-transform" title="Herd"></i>
-                                <i class="fab fa-node-js text-2xl text-[#339933] hover:scale-110 transition-transform" title="Node.js"></i>
-                                <span class="icon-xampp text-2xl hover:scale-110 transition-transform" title="XAMPP"><span class="path1"></span><span class="path2"></span></span>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="mailto:janneiljanzen.go@gmail.com" 
+                       class="inline-block px-7 py-4 border-2 border-green text-green font-mono hover:bg-green/10 transition-colors rounded">
+                        Say Hello
+                    </a>
                 </div>
-
-                <!-- Digital Design Card -->
-                <div class="bg-white dark:bg-[#1e2837] rounded-lg p-6 hover:bg-gray-50 dark:hover:bg-[#232f3e] transition-colors shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Digital Design</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed">
-                        Creating visually stunning designs and multimedia content with industry-standard tools. Experienced in graphic design, video editing, and digital art creation.
-                    </p>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="text-gray-400 dark:text-gray-500 mb-2 text-sm">Tools I use</h4>
-                            <div class="flex flex-wrap gap-4">
-                                <span class="icon-adobeillustrator text-2xl text-[#FF9A00] hover:scale-110 transition-transform" title="Adobe Illustrator"></span>
-                                <span class="icon-adobephotoshop text-2xl text-[#31A8FF] hover:scale-110 transition-transform" title="Adobe Photoshop"></span>
-                                <span class="icon-adobeindesign text-2xl text-[#FF3366] hover:scale-110 transition-transform" title="Adobe InDesign"></span>
-                                <span class="icon-adobepremiere text-2xl text-[#EA77FF] hover:scale-110 transition-transform" title="Adobe Premiere Pro"></span>
-                                <span class="icon-canva text-2xl text-[#00C4CC] hover:scale-110 transition-transform" title="Canva"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </section>
         </div>
-    </section>
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-12 text-gray-800 dark:text-white">
-                Get In Touch
-            </h2>
-            <div class="flex justify-center gap-8 mb-8">
-                <a href="mailto:your.email@example.com" class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">
-                    <i class="fas fa-envelope text-2xl"></i>
-                </a>
-                <a href="https://github.com/janzengo" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">
-                    <i class="fab fa-github text-2xl"></i>
-                </a>
-                <a href="https://linkedin.com/in/janzengo" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">
-                    <i class="fab fa-linkedin text-2xl"></i>
-                </a>
-                <a href="https://instagram.com/janzengogrowglow" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">
-                    <i class="fab fa-instagram text-2xl"></i>
-                </a>
-            </div>
-            <p class="text-gray-600 dark:text-gray-300">
-                Feel free to reach out for collaborations or just a friendly hello 
-            </p>
-            <p class="text-gray-600 dark:text-gray-300">
-                &copy; 2025 Janzen @janzengo. All rights reserved.
-            </p>
-        </div>
-    </section>
-
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="js/main.js"></script>
+    <script src="js/particles-config.js"></script>
+    <script src="js/navigation.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // GSAP Animation for hero section
-            gsap.from(".hero-content", {
-                duration: 1,
-                y: 50,
-                opacity: 0,
-                ease: "power3.out"
-            });
+        window.addEventListener('load', function() {
+            if (window.particlesJS) {
+                console.log('Particles.js loaded successfully');
+                particlesJS('particles-js', particlesConfig);
+            } else {
+                console.error('Particles.js failed to load');
+            }
+        });
+    </script>
+    <script src="js/main.js"></script>
+
+    <!-- Section Navigation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navItems = document.querySelectorAll('.nav-item');
             
-            gsap.from(".hero-image", {
-                duration: 1,
-                x: 50,
-                opacity: 0,
-                delay: 0.3,
-                ease: "power3.out"
+            function updateActiveSection() {
+                const scrollPosition = window.scrollY + window.innerHeight / 2;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        navItems.forEach(item => {
+                            item.classList.remove('active');
+                            if (item.getAttribute('data-section') === sectionId) {
+                                item.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            // Update active section on scroll
+            window.addEventListener('scroll', updateActiveSection);
+            updateActiveSection(); // Initial check
+
+            // Smooth scroll to section when clicking nav items
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const sectionId = item.getAttribute('data-section');
+                    const section = document.getElementById(sectionId);
+                    if (section) {
+                        section.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
             });
         });
     </script>
+    
+    <!-- Sticky Section Headers for Mobile -->
+    <script src="js/sticky-headers.js"></script>
 </body>
 </html>

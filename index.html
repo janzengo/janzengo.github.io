@@ -97,6 +97,33 @@
             }
         }
     </script>
+    
+    <style>
+        /* Rainbow text animation for Aground link */
+        @keyframes rainbow-text {
+            0% { color: #ff0000; }
+            14% { color: #ff7f00; }
+            28% { color: #ffff00; }
+            42% { color: #00ff00; }
+            57% { color: #0000ff; }
+            71% { color: #4b0082; }
+            85% { color: #9400d3; }
+            100% { color: #ff0000; }
+        }
+        
+        .rainbow-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .rainbow-hover:hover {
+            animation: rainbow-text 2s linear infinite;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            cursor: url(https://cdn.custom-cursor.com/db/9916/32/game-draw-stickman-alex-and-sword-cursor.png), pointer !important;
+            transform: scale(1.05);
+            font-weight: bolder;
+            letter-spacing: 1px;
+        }
+    </style>
 </head>
 <body class="font-sfpro">
     </header>
@@ -185,7 +212,7 @@
                             Eager to advance my career and explore the vast world of technology, I am actively making it happen through open-source contributions. Fast-forward to today, and I'm continuously learning and improving my skills to develop accessible, human-centered products and applications.
                         </p>
                         <p class="text-slate mb-5 leading-relaxed">
-                            In my spare time, you would find me busy building a civilization on Unoiks 213 alien system called CaptAIn's Colony in a very good RPG game called <a href="https://store.steampowered.com/app/876650/Aground/" target="_blank">Aground</a>. (You should try it sometimes, I know you'll enjoy it!)  
+                            In my spare time, you would find me busy building a civilization on Unoiks 213 alien system called CaptAIn's Colony in a very good RPG game called <a href="https://store.steampowered.com/app/876650/Aground/" target="_blank" class="rainbow-hover font-bold">Aground</a>. (You should try it sometimes, I know you'll enjoy it!)  
                         </p>
                     </div>
                 </div>

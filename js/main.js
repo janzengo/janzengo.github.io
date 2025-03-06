@@ -8,18 +8,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Mobile Menu Toggle
     const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+    const mobileMenuFirst = document.getElementById('mobileMenu');
+    const mobileMenuLinks = mobileMenuFirst.getElementsByTagName('a');
 
     menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('translate-x-full');
+        mobileMenuFirst.classList.toggle('translate-x-full');
         document.body.classList.toggle('overflow-hidden');
     });
 
     // Close mobile menu when clicking a link
     Array.from(mobileMenuLinks).forEach(link => {
         link.addEventListener('click', () => {
-            mobileMenu.classList.add('translate-x-full');
+            mobileMenuFirst.classList.add('translate-x-full');
             document.body.classList.remove('overflow-hidden');
         });
     });
@@ -148,8 +148,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Close menu when clicking on mobile menu links
-    const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
-    mobileMenuLinks.forEach(link => {
+    const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+    mobileNavLinks.forEach(link => {
         link.addEventListener('click', toggleMobileMenu);
     });
 
@@ -294,7 +294,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Initialize theme toggle functionality
-    const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
         const currentTheme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', currentTheme);

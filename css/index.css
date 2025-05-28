@@ -74,14 +74,14 @@ body {
     top: 0;
     left: 0;
     z-index: 0;
-    background: #0a192f;
+    background: #1B2B1B;
 }
 
 /* Content Wrapper */
 .content-wrapper {
     position: relative;
     z-index: 1;
-    background-color: rgba(10, 25, 47, 0.85);
+    background-color: rgba(27, 43, 27, 0.85);
 }
 
 /* Sections */
@@ -102,27 +102,27 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: #0a192f;
+    background: #1B2B1B;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #233554;
+    background: #2A3C2A;
     border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #64ffda;
+    background: #8EA832;
 }
 
 /* Text Selection */
 ::selection {
-    background: rgba(100, 255, 218, 0.3);
-    color: #ccd6f6;
+    background: rgba(142, 168, 50, 0.3);
+    color: #F4F5E3;
 }
 
 ::-moz-selection {
-    background: rgba(100, 255, 218, 0.3);
-    color: #ccd6f6;
+    background: rgba(142, 168, 50, 0.3);
+    color: #F4F5E3;
 }
 
 /* Section Navigation */
@@ -148,8 +148,8 @@ body {
 .nav-dot {
     width: 12px;
     height: 12px;
-    background: rgba(136, 146, 176, 0.3);
-    border: 2px solid #8892b0;
+    background: rgba(212, 214, 168, 0.3);
+    border: 2px solid var(--slate);
     border-radius: 50%;
     margin-right: 0;
     transition: all 0.3s ease;
@@ -162,10 +162,10 @@ body {
 
 /* Active state */
 .nav-item.active .nav-dot {
-    background: #64ffda;
-    border-color: #64ffda;
+    background: var(--green);
+    border-color: var(--green);
     transform: scale(1.2);
-    box-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+    box-shadow: 0 0 10px rgba(142, 168, 50, 0.3);
 }
 
 .nav-item.active .nav-text {
@@ -173,14 +173,14 @@ body {
 }
 
 .nav-item.active + .nav-item .nav-line {
-    background: rgba(100, 255, 218, 0.2);
+    background: rgba(142, 168, 50, 0.2);
 }
 
 /* Hover states */
 .nav-item:hover .nav-dot {
     transform: scale(1.2);
-    border-color: #64ffda;
-    background: rgba(100, 255, 218, 0.1);
+    border-color: var(--green);
+    background: rgba(142, 168, 50, 0.1);
 }
 
 .nav-item:hover .nav-text {

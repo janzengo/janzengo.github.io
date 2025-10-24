@@ -9,12 +9,6 @@
   Built with HTML, <a href="https://tailwindcss.com/">Tailwind CSS</a>, <a href="https://jquery.com/">jQuery</a>; Hosted on <a href="https://pages.github.com/">GitHub Pages</a> Design inspired by <a href="https://brittanychiang.com/">Brittany Chiang</a>
 </p>
 
-<p align="center">
-  <a href="https://github.com/janzengo/janzengo.github.io/deployments" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub%20Pages-Deployed-success?style=for-the-badge&logo=github" alt="GitHub Pages Deployment Status" />
-  </a>
-</p>
-
 ![demo](https://github.com/janzengo/janzengo.github.io/blob/c69d5a4ba945a01e1ed60ff830ddf47f56b02443/images/page-screenshot.PNG)
 
 
